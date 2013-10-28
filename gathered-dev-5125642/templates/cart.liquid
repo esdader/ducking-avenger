@@ -1,0 +1,101 @@
+<div class="inner cart-pg">
+	<section class="cart-intro">
+		<header>
+			<p>Home / Shop / By Artist</p>
+			<h1 class="cart-title">Shop</h1>
+		</header>
+	</section>
+	<table class="cart-tbl">
+		<thead>
+			<tr>
+				<th class="cart-img">Description</th>
+				<th class="cart-desc"></th>
+				<th class="shop-price">Price</th>
+				<th class="quantity">Quantity</th>
+				<th class="remove">Remove</th>
+				<th class="total">Total</th>
+			</tr>
+		</thead>
+		<form action="/cart" method="post" name="cartform">
+		{% if cart.item_count > 0 %}
+			<tbody>
+				{% for item in cart.items %}
+					<tr>
+						<td class="cart-img">{% if item.product.images[0] %}<img src="{{ item.product.images[0] | product_img_url: "small" }}" alt="{{ item.title | escape }}" />{% endif %}</td>
+						<td class="cart-desc">
+							<div class="collection-name">{{ item.vendor_name | escape }}</div><div class="piece-title">{{ item.title | escape }}
+								{% for p in item.properties %}
+  									{% unless p.last == blank %}
+									   to {{ p.last }}
+									{% endunless %}
+								{% endfor %}
+							</div>
+						</td>
+						<td class="shop-price">{{ item.price | money }}</td>
+						<td class="quantity"><input type="text" name="updates[{{ item.id }}]" id="updates_{{ item.id }}"  value="{{ item.quantity }}" /></td>
+						<td class="remove"><a href="/cart/change/{{ item.variant.id }}?quantity=0" class="remove-btn">remove</a></td>
+						<td class="total">{{ item.line_price | money }}</td>
+					</tr>
+				{% endfor %}
+				<tr class="totals-row">
+					<td colspan="4">
+						<div id="donate-modal-btn" class="donate-cta" data-toggle="modal" role="button">
+							<a href="#donate-modal" class="donate-cta-link" role="button">Donate to a Gathered for the Arts Organization</a><div class="donate-cta-btn"> </div>
+						</div>
+					</td>
+					<td colspan="2" class="order-total">
+						<span>Total:</span> {{ cart.total_price | money }}
+					</td>
+				</tr>
+			</tbody>
+		
+		{% else %}
+			<tbody>
+				<tr><td colspan="6" class="no-items">Your shopping cart is empty.  <a href="/pages/artists">Contine shopping...</a></td></tr>
+			</tbody>
+		{% endif %}
+	</table>
+	<div class="cart-btns"> 
+		<input type="submit" class="cart_btn" alt="Update" name="update" value="Update Cart" />
+		<input type="submit" class="cart_btn" alt="Checkout" name="checkout" value="Checkout" />
+	</div>
+	{% if additional_checkout_buttons %}
+	<div class="additional-checkout-buttons">
+	  <p>- or -</p>
+	  {{ content_for_additional_checkout_buttons }}
+	</div>
+
+{% endif %}
+	</form>
+</div>
+<div id="donate-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="donateModalLabel" aria-hidden="true">
+	<div class="modal-header">    
+		<h3 id="donateModalLabel">Donate</h3>
+	</div>
+	<div class="modal-body">
+		<p>Select an organization and an amount from the dropdown menus below and then Add to Cart. For more information on the Gathered for the Arts organizations please click <a href="/pages/gathered-for-the-arts">here</a>.</p>
+	</div>
+	<div class="modal-footer">
+		{% for product in collections.donation-button.products %}
+			<form  action="/cart/add" method="post" class="modal-form">	
+				<select id="charity-name" name="properties[Charity]">
+					<option value="Select a Charity">Select a Charity</option>
+					{% for link in linklists.donation-charities.links %}
+						<option value="{{ link.title }}">{{ link.title }}</option>
+					{% endfor %}
+				</select>
+				<select id="product-select" name='id'>
+					<option value="Dollar Amount">Dollar Amount</option>
+        			{% for variant in product.variants %}
+				        <option value="{{ variant.id }}">{{ variant.title }}</option>
+			        {% endfor %}
+			    </select>
+			    <input type="submit" class="cart_btn modal-cart-btn" name="add" id="purchase" value="Add To Cart" />
+			</form>
+		{% endfor %}
+		
+		<div class="modal-close-btn-grp">
+			<button type="button" data-dismiss="modal" aria-hidden="true">X</button><a href="#close" type="button" data-dismiss="modal" aria-hidden="true">Close Window</a>
+		</div>
+	</div>
+</div>

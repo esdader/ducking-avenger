@@ -1,0 +1,225 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+//                      home page                    //
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+//------------------------------------------- home-hero //
+
+.home-hero {
+    margin-bottom: 28px;
+
+    .inner {
+        padding-bottom: 28px;
+        @include divider-bottom;
+    }
+
+    .alt-link {
+        color: $blue;
+    }
+}
+
+
+//------------------------------------------- home-hero intro text section //
+
+.home-hero-title {
+    font-size: 47px;
+    margin: 0 0 -14px 0;
+    font-weight: $headings-bold;
+    text-transform: none;
+}
+
+.home-hero p {
+    width: 846px;
+    font-size: 14px;
+}
+
+.home-hero p:last-child {
+    margin-bottom: 0;
+}
+
+//-------------------------------------------  home-main-content //
+
+.home-main-content {
+    width: $inner-width;
+    margin: 0 auto 40px auto;
+    padding: 0 0 28px;
+    @include divider-bottom;
+
+}
+
+//-------------------------------------------  home > charity //
+
+.home-charity {
+    min-height: 424px;
+    background: url(charity_bg.png) no-repeat left top;
+    @include divider-right;
+
+}
+
+.charity-link-heading {
+    width: 219px;
+    height: 59px;
+    display: block;
+    background: url(for_arts_header.png) no-repeat 15px center;
+}
+
+.charity-inner {
+    @include box-sizing;
+    width: 219px;
+    padding: 0 13px 0 15px;
+
+    p {
+        line-height: 1.2;
+    }
+}
+
+.charity-inner-header {
+    p:first-child {
+        margin-top: -6px;
+        padding-top: 0;
+    }
+}
+
+.charity-list {
+    margin-top: 1.5em;
+}
+
+.charity-list div {
+    height: 52px;
+    overflow: hidden;
+    padding:  0;
+    margin-bottom: 1em;
+    font-size: 12px;
+    line-height: 1.1;
+
+    a {
+        font-size: 12px;
+        line-height: 1.1;
+    }
+
+    img {
+        max-width: 52px;
+        height: auto;
+        max-height: 52px;
+    }
+}
+
+.charity-list-hero {
+    float: left;
+    width: 52px;
+    margin-right: 1em;
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.charity-list-title {
+    float: left;
+    width: 112px;
+}
+
+.charity-link {
+    font-size: 12px;
+    float: right;
+    margin-right: 36px;
+}
+
+//-------------------------------------------  home-more-art //
+
+.home-more-art {
+    padding-left: 16px;
+
+    img {
+        margin: 0 0 14px 14px;
+    }
+
+    header {
+        padding: 0 0 1em 14px;
+
+    }
+}
+
+.home-more-art-h {
+    width: 320px;
+    padding: 0;
+    margin: 0;
+    float: left;
+    font-size: 17px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.home-more-art-l {
+    float: right;
+    font-size: 12px;
+    font-weight: $headings-semi-bold;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $punchy-blue;
+
+
+    &:hover {
+        color: $yellow;
+    }
+}
+
+
+//-------------------------------------------  From the Blog //
+
+.from-blog {
+    @include divider-right;
+
+    h1 {
+        padding-top: 0;
+        margin-top: 0;
+        text-transform: uppercase;
+    }
+
+    img {
+        float: left;
+        margin-right: 3em;
+        max-width: 136px;
+        height: auto;
+    }
+
+    p {
+        padding: 0 2em 0 0;
+    }
+}
+
+
+//------------------------------------------- Subscribe //
+
+.subscribe {
+    padding-left: 27px;
+    h1 {
+        padding-top: 0;
+        margin-top: 0;
+        text-transform: uppercase;
+    }
+}
+
+.mc-embed-signup {
+    position: relative;
+}
+.mce-email {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 324px;
+    height: 18px;
+    margin: 0;
+    padding: 0 4px;
+    background: #d0d0d0;
+    border: none;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #6e6d6d;
+}
+.mc-ebedded-subscribe {
+    position: absolute;
+    left: 332px;
+    top: 0;
+}

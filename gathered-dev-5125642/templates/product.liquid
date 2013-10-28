@@ -1,0 +1,88 @@
+<div class="inner">
+  <section class="product-info">
+    <header class="product-info-header">
+      <p class="crumbs"><a href="/">Home</a> / <a href="/pages/artists">Shop</a> / <a href="/pages/artists">By Artist</a></p>
+          {% if collection %}
+            <p class="product-navigation">        
+            {% if collection.previous_product %}
+              {{ '&laquo; Previous' | link_to: collection.previous_product }}
+            {% endif %}
+            {% if collection.next_product %}
+              {% if collection.previous_product %} | {% endif %}
+              {{ 'Next &raquo;' | link_to: collection.next_product }}
+            {% endif %}
+            </p>
+          {% endif %}
+      <h1 class="artists-title"><a href="/collections/{{ product.vendor | handleize }}">{{ product.vendor }}</a></h1>
+    </header>
+    <section class="product-images column">
+      <div class="main-product-image column">
+        <div id="active-wrapper">
+          <img src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
+        </div>
+        <div class='zoom-msg'><p>Roll over image to zoom</p></div>
+      </div>
+      <div class="more-product-images column">
+        <ul id="thumbs" {% if product.images.size == 1 %}class="visuallyhidden"{% endif %}>
+          {% for image in product.images | offset: 1 %}
+            <li><a class="gallery" href="{{ image | product_img_url: 'original' }}" title="{{ image.alt | escape }}"><img  src="{{ image | product_img_url: 'small' }}" alt="{{ image.alt | escape }}" /></a></li>
+          {% endfor %}
+          <li><a class="gallery" href="{{ product.featured_image | product_img_url: 'original' }}" title="{{ image.alt | escape }}"><img src="{{ product.featured_image | product_img_url: 'small' }}" alt="{{ product.featured_image.alt | escape }}" /></a></li>
+        </ul>
+      </div>
+    </section>
+    <section class="product-details column">
+      <h1>{{ product.title }}</h1>
+      {% if product.available %}
+        <h2 class="price">{{ product.price | money | remove: '.00' }}</h2>
+      {% else %}
+        <h2 class="price">Sold</h2>
+      {% endif %}
+      <form action="/cart/add" method="post">
+        <input type="hidden" id="{{ product.variants[0].id }}" name="id" value="{{ product.variants[0].id }}" />
+        <div class="add-to-cart"><input type="submit" class="cart_btn" name="add" id="purchase" value="Add To Cart" /></div>
+      </form>
+      {{ product.description }}
+      <div class="product-specs">
+        <p>
+          {% for variant in product.variants %}
+              {% for option in variant.options %}
+                {% unless product.options[forloop.index0] == 'Type of Art' %}
+                  {% if forloop.last %}
+                    {{ option }}
+                  {% else %}
+                    {{ option }};
+                  {% endif %}
+                {% endunless %}
+              {% endfor %}
+          {% endfor %}
+        </p>
+      </div>
+      
+      <div class="product-social-media">
+        <ul>
+          <li><a href="https://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+          <li><a href="//pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&media={{ product.featured_image | product_img_url: 'compact' | split:'?' | first  }}&description={{ product.title | escape | replace:' ','%20' }}" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></li>
+          <li><div class="fb-like" data-href="{{ shop.url }}{{ product.url }}" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div></li>
+        </ul>
+      </div>
+      <div class="shipping-statement">
+        <p>All items are sent using UPS. Once orders are fulfilled (art outside of the NYC area may take a bit longer) we will ship according to the method chosen. Cost is calculated during checkout.</p>
+      </div>
+    </section>
+    </section>
+    {% comment %} 
+      Start template that is entered  as the collection description
+  {% endcomment %}
+      {% assign vendor_name = product.vendor | handleize %}
+      {{ collections[vendor_name].description }}
+  {% comment %} End template {% endcomment %}
+    <section class="similar-art column int-23s">
+      <h1>Similar Art</h1>
+      {% capture collectionName %}similar-{{ vendor_name }}{% endcapture %}
+      {% for product in collections[collectionName].products %}
+        <a href="/collections/{{ product.vendor || handleize }}/products/{{ product.handle }}"><img src="{{ product.featured_image | product_img_url: 'medium' }}" alt="{{ product.featured_image.alt | escape }}" /></a>
+      {% endfor %}
+    </section>
+</div>

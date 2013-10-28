@@ -1,0 +1,94 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+//                      Header                       //
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+.main-header {
+    position: relative;
+    width: $site-width - 100px;
+    height: 127px;
+    overflow: hidden;
+    margin:  0 auto 55px auto;
+}
+.site-logo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.main-nav {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-align: right;
+}
+.main-nav a {
+    margin-left: 37px;
+    color: $main-nav-color;
+    font: normal normal $headings-weight $headings-size/1 $headings-family;
+    text-decoration: none;
+    text-transform: uppercase;
+
+        &:hover {
+            color: $main-nav-hover;
+        }
+}
+
+.main-search {
+    position: absolute;
+    left: 637px;
+    top: 28px;
+    width: 300px;
+
+}
+
+.search-field {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 227px;
+    height: 18px;
+    margin: 0;
+    padding: 0 4px;
+    background: $med-gray;
+    border: none;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: $base-book;
+    color: $dark-gray;
+}
+.search-button {
+    position: absolute;
+    left: 235px;
+    top: 0;
+}
+
+.main-btn {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    border: none;
+    background: #6d6d6d url(chevron.png) no-repeat center center;
+}
+
+.main-btn:hover {
+    background-color: #000;
+}
+
+.cart-count {
+    position: absolute;
+    left: 911px;
+    top: 28px;
+    width: 100px;
+    height: 20px;
+    background: url(cart_icon.png) no-repeat left 4px;;
+
+    a {
+        margin: 0 0 0 22px;
+        font-size: 12px;
+        line-height: 13px;
+        color: $cart-blue;
+        text-transform: uppercase;
+
+        &:hover {
+            color: $yellow;
+        }
+    }
+}

@@ -1,0 +1,210 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+//                     Shop pages                    //
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+.shop-intro {
+    @include divider-bottom;
+    margin-bottom: 1em;
+
+    h1 {
+        margin: 0;
+        color: $yellow;
+        font-size: 40px;
+        line-height: 1.5;
+        text-transform: uppercase;
+    }
+}
+
+.shop-main-content {
+    width: 73%;
+}
+
+.shop-subnav {
+    width: 26%;
+}
+
+//-------------------- Shop Sub Nav ------------------- //
+
+.shop-subnav {
+    
+    h1 {
+        margin: 0;
+        font: normal normal normal 12px/2.3 $sans-family;
+        font-weight: $base-bold;
+        color: $not-black;
+        text-transform: uppercase;
+        cursor: pointer;
+    
+        &:hover {
+            color: $yellow;
+        }
+    }
+
+    a {
+        display: block;
+        font-size: 12px;
+        line-height: 1.75;
+        font-weight: $base-weight;
+        color: $not-black;
+        
+        &:hover {
+            color: $yellow;
+        }
+
+        &.active {
+            color: $yellow;
+        }
+    }
+}
+
+.subnav-children {
+    display: none;
+    padding-left: .5em;
+}
+
+.subnav-children.current {
+    display: block;
+}
+
+.shop-type-listing {
+    @include divider-bottom;
+    position: relative;
+    padding-bottom: 3em;
+    margin-bottom: 1em;
+
+
+    h1 {
+        font-size: 17px;
+        line-height: 1.5;
+        font-weight: 400;
+        text-transform: uppercase;
+
+        a {
+            font-weight: 600;
+        }
+    }
+
+    .img-holder {
+        display: inline-block;
+        width: 148px;
+        height: 203px;
+        margin-left: 34px;
+        //border: 1px solid $img-box-color;
+        vertical-align: top;
+        line-height: 203px;
+    
+        &.first {
+            margin-left: 0;
+        }
+    }
+
+    .view-all {
+        position: absolute;
+        right: 0;
+        bottom: 3px;
+        font-family: $base-family;
+        font-weight: $base-bold;
+        text-transform: uppercase;
+        line-height: 2;
+        color: #0d7bc1;
+
+        &:hover {
+            color: $yellow;
+        }
+    }
+    
+}
+
+.shop-artists .view-all {
+    top: 0;
+    bottom: auto;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.img-holder img {
+    vertical-align: middle;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.pagi {
+    text-align: right;
+
+    a {
+        font-size: 12px;
+        line-height: 1.5;
+        font-weight: $base-bold;
+        margin-right: .2em;
+        
+        &:hover {
+            color: $yellow;
+        }
+    }
+
+    span {
+        font-size: 12px;
+        line-height: 1.5;
+        font-weight: $base-bold;
+        margin-right: .2em;
+
+    }
+
+    span.current {
+        color: $yellow;
+    }
+}
+
+// ---------------  shop by type of art  ------------ //
+
+.shop-art-type .img-holder {
+    margin-top: 16px;
+    margin-bottom: 16px 
+}
+
+.shop-art-type {
+
+    img {
+        margin: 16px;
+        max-height: 203px;
+        width: auto;
+
+        &:first-child {
+            margin-left: 0;       
+        } 
+    }
+}
+
+.shop-art-type h1 {
+    margin-bottom: 0;
+}
+
+// ---------------  shop by collections  ------------ //
+
+.shop-collections h1 {
+    margin-bottom: 0;
+}
+
+
+.shop-collections header {
+    @include divider-bottom;
+
+    margin-bottom: 2em;
+
+    h1 {
+        font-size: 60px;
+        font-weight: $headings-bold;
+        line-height: .8;
+        margin: .2em 0 0;
+    }
+
+    p {
+        width: 585px;
+    }
+}
+
+.shop-collections .img-holder {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}

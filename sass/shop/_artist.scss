@@ -1,0 +1,161 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+//                      Artists page                 //
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+.artists-hero {
+    @include divider-bottom;
+    padding-bottom: 2em;
+    margin-bottom: .5em;
+}
+.artists-hero > header  > p {
+    color: #231f20;
+    margin: 0;
+    padding: 0;
+
+    a {
+        color: $dark-black;
+        font-weight: 400;
+        &:hover {
+            color: $yellow;
+        }
+    }
+}
+
+.artists-title,
+.artists-title a {
+    margin: 0 0 .5em 0;
+    padding: 0;
+    clear: both;
+    color: $yellow;
+    font-size: 34px;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.artists-title a:hover {
+    color: $dark-black;
+}
+
+.view-all {
+    float: right;
+    margin: .5em 0;
+    font-size: 12px;
+    font-weight: $headings-semi-bold;
+    color: $punchy-blue;
+}
+
+// bio and charity section // 
+
+.bio-charity {
+    @include divider-bottom;
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+}
+
+/* artists bio section */
+
+.artist-bio-section {
+    @include divider-right;
+    padding-top: .5em;
+}
+.artist-photo {
+    width: 20%;
+
+    img {
+        max-width: 90%;
+        height: auto;
+    }
+}
+
+.artist-bio {
+    width: 79%;
+    padding-right: 3em;
+
+    h1:first-child {
+        margin: 0;
+        line-height: .8;
+        text-transform: uppercase;
+    }
+}
+
+/* artists charity section */
+.artist-charity {
+    width: 239px;
+    height: 157px;
+    float: right;
+    background: url(artist_arts_bg.jpg) no-repeat left -9px;
+
+    h1 {
+        width: 239px;
+        height: 66px;
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+        padding: 0 45px 0 30px;
+        line-height: 1.4;
+    }
+}
+
+.artist-read-more {
+    margin-left: 30px;
+    font-size: $base-size;
+    line-height: 1;
+}
+
+/* artist blog section */
+
+.artist-blog {
+    @include divider-right;
+    padding: 0 27px 0 0;
+
+    h1 {
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
+
+    img { 
+        max-width: 217px;
+    }
+}
+
+.artist-blog-more {
+    margin-top: -1em;
+    font-size: 12px;
+}
+
+/* artist similar-art */
+
+.similar-art {
+    padding-left: 30 / 16 * 1em;
+
+    h1 {
+        text-transform: uppercase;
+    }
+
+    img {
+        float: left;
+        margin: 16px 16px 16px 0;
+        max-height: 200px;
+        width: auto;
+
+    }
+}
+
+//----------------------------------------- test page overrides //
+
+.test-page .carousel {
+    height: 160px;
+}
+
+.test-img-holder {
+    width: 160px;
+    height: 160px;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.test-img-holder:first-child {
+    margin-left: 0;
+}

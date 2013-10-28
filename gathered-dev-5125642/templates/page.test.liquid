@@ -1,0 +1,44 @@
+<div class="inner shop-intro">
+	<h1>Shop</h1>
+</div>
+<div class="inner">
+	<nav class="shop-subnav column">
+		<h1>Artist</h1>
+			<div class="subnav-children current">
+				{% for link in linklists.artists-menu.links %}
+					<a href="{{ link.url }}">{{ link.title }}</a>
+				{% endfor %}
+			</div>
+		<h1>Type of Art</h1>
+			<div class="subnav-children">
+				{% for link in linklists.type-of-art-menu.links %}
+					<a href="{{ link.url }}">{{ link.title }}</a>
+				{% endfor %}
+			</div>
+		<h1>Collections</h1>
+			<div class="subnav-children">
+				{% for link in linklists.collections-menu.links %}
+					<a href="{{ link.url }}">{{ link.title }}</a>
+				{% endfor %}
+			</div>
+	</nav>
+	<section class="shop-artists shop-main-content column test-page">
+		{% for link in linklists.artists-menu.links %}
+		<article class="shop-type-listing">
+			<h1><a href="link.url">{{ link.object.title }}</a></h1>
+			<div class="carousel-container">
+    		<div class="carousel carousel-small">
+      			<div class="carousel-inner">
+	        		{% for product in link.object.products %}
+	        			<div class="test-img-holder"><a href="{{ product.url | within: collection }}"><img src="{{ product.featured_image | product_img_url: 'compact' }}" /></a></div>
+	        		{% endfor %}
+         		</div>
+    		</div>
+    		<a href="#previous" class="slider-btns prev left ir">Previous</a>
+    		<a href="#next" class="slider-btns next right ir">Next</a>
+  		</div>
+			<a href="{{ link.url }}" class="view-all">View artist&#8217s page &gt;</a>
+		</article>
+		{% endfor %}
+	</section>
+</div>

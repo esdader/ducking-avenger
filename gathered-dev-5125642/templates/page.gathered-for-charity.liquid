@@ -1,0 +1,43 @@
+	<section class="int-hero">
+		<div class="inner">
+			<div class="hero-image">
+				<h1>About</h1>
+			</div>
+		</div>
+	</section>
+	<div class="inner-bottom-divider clearfix">
+		<div class="int-side-nav about-nav column int-side">
+			<h1>About</h1>
+			{% for link in linklists.about-menu.links %}
+				<a href="{{ link.url }}"{% if link.active %} class="current"{% endif %}>{{ link.title }}</a>
+			{% endfor %}
+		</div>
+		<section class="about-main column int-main-list">
+			<article class="charity-entry">
+				<div class="column desc">
+					{{ page.content }}
+				</div>
+				<div class="column org-logo">
+					<img src="{{ 'small_gathered_charity.jpg' | asset_url }}" alt="Gathered for Charity" />
+				</div>
+			</article>
+			{% paginate blogs.gathered-for-the-arts.articles by 20 %}
+				{% for article in blogs.gathered-for-the-arts.articles %}
+				<article class="charity-entry">
+					<h1>{{ article.title }}</h1>
+					<div class="column desc">
+						{{ article.content }}
+					</div>
+					<div class="column org-logo top-align">
+						{{ article.excerpt }}
+					</div>
+				</article>
+				{% endfor  %}
+				{% if paginate.pages > 1 %}
+					<div class="pagination">
+						{{ paginate | default_pagination }}
+					</div>
+				{% endif %}
+			{% endpaginate %}
+		</section>
+	</div>

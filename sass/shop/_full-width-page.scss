@@ -1,0 +1,37 @@
+// full width pages
+
+.full-width {
+	padding: 0 $site-side-padding;
+
+	header {
+		@include divider-bottom;
+		margin-bottom: 1em;
+	}
+
+	section {
+		width: 620px;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.single-column-title {
+	margin: 0 0 .5em 0;
+    padding: 0;
+    color: $yellow;
+    font-size: 40px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.privacy-policy,
+.return-policy,
+.terms-of-service,
+.faq {
+	p, a, li, h1, h2, h3, h4, h5, h6, b, strong, i, em {
+		font-size: 13px;
+	}
+}

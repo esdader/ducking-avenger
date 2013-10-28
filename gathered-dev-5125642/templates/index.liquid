@@ -1,0 +1,61 @@
+<section class="home-hero">
+    <div class="inner">
+      <div class="carousel-container  hide-prev-btn">
+        <div class="carousel">
+            <div class="carousel-inner">
+              {% for product in collections.frontpage.products %}
+                <a href="/collections/{{ product.vendor || handleize }}/products/{{ product.handle }}"><img src="{{ product.featured_image | product_img_url: 'large' }}" /></a>
+              {% endfor %}
+            </div>
+        </div>
+        <a href="#previous" class="slider-btns prev left ir">Previous</a>
+        <a href="#next" class="slider-btns next right ir">Next</a>
+      </div>
+      {{ pages.home-page-snippet.content }}
+  </section>
+  <div class="home-main-content clearfix">
+    <section class="home-charity column home-13 clearfix">
+      <h1 class="charity-link-heading ir">Gathered for Charity</h1>
+      <div class="charity-inner">
+        <div class="charity-inner-header">{{ pages.home-gathered-arts-snippet.content }}</div>
+        <div class="charity-list">
+          {% for article in blogs.gathered-for-the-arts.articles | limit:4 %}
+            <div>
+              <div class="charity-list-hero"><a href="/pages/gathered-for-the-arts">{{ article.excerpt }}</a></div>
+              <div class="charity-list-title"><a href="/pages/gathered-for-the-arts">{{ article.title | escape }}</a></div>
+            </div>
+        {% endfor  %}
+      </div>
+    </section>
+    <section class="home-more-art column home-23 clearfix">
+      <header class="clearfix">
+        <h1 class="home-more-art-h">More Art from the Shop</h1>
+        <a href="/pages/artists" class="home-more-art-l">View All &raquo;</a>
+      </header>
+      {% for product in collections.more-art-homepage.products %}
+
+        <a href="/collections/{{ product.vendor || handleize }}/products/{{ product.handle }}"><img src="{{ product.featured_image | product_img_url: 'compact' }}" alt="{{ product.alt | escape }}" /></a>
+      {% endfor %}
+    </section>
+  </div>
+  <div class="inner">
+    <section class="column sub50 divider from-blog">
+      <h1>From the Blog</h1>
+      {{ pages.home-blog-snippet.content }}
+    </section>
+    <section class="column big50 subscribe">
+      <h1>Subscribe to the Gathered newsletter</h1>
+      <p>See the latest additions to the collection, read new Q&amp;A's with artists and hear the latest about Gathered for the Arts</p>
+      <!-- Begin MailChimp Signup Form -->
+
+      <div id="mc_embed_signup" class="mc-embed-signup">
+        <form action="http://gathered.us5.list-manage.com/subscribe/post?u=3cda6bcc55226f16c183b97f4&amp;id=abcad33fca" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          
+            <input type="email" value="" name="EMAIL" class="email mce-email" id="mce-EMAIL"  value="Email Address" required  onfocus="if( this.value == 'enter your email address' ) {this.value = '';};" placeholder="enter your email address">
+            <input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="mc-ebedded-subscribe main-btn">
+        </form>
+      </div>
+
+
+    </section>
+  </div>

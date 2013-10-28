@@ -1,0 +1,169 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+//                     Products page                 //
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+.product-info {
+    @include divider-bottom;
+    padding-bottom: 2em;
+    margin-bottom: .5em;
+}
+
+.product-info-header p {
+      
+  font-weight: 400;
+  margin: 0; 
+      
+  a {
+    color: #231f20;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+
+    &:hover {
+      color: $yellow;
+    }
+  }
+}
+.crumbs {
+  width: 200px;
+  float: left;
+}
+.product-navigation {
+  width: 165px;
+  float: left;
+  text-align: right;
+}
+
+.product-images {
+    width: 50%;
+}
+
+.main-product-image {
+    width: 365px;
+    margin-right: 18px;
+
+    img {
+        //max-width: 100%;
+    }
+}
+
+.more-product-images {
+    width: 75px;
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 0 0 1em 0;
+    }
+}
+
+#thumbs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#active-wrapper{
+  position: relative;
+  background: #fff;
+  width: 365px;
+  overflow: hidden;
+  margin: 0 18px 0 0;
+  } 
+
+#active-wrapper img {
+  display: block;
+}
+#active-wrapper .zoomed {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#active-image-loading {
+  background: #fff url(i-loading.gif) 50% 50% no-repeat; 
+  width: 40px;
+  height: 40px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  position: absolute;
+  z-index: 2;
+  text-indent: -900em; overflow: hidden;
+}
+
+.zoom-msg p {
+  margin: 0;
+  text-align: right;
+  font-style: italic;
+  color: #6e6d6d;
+}
+
+.product-details {
+    position: relative;
+    width: 49%;
+
+    h1 {
+        margin-top: 1px;
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    p {
+        padding-right: 2em;
+    }
+}
+
+.price {
+    font-size: 19px;
+    color: $dark-black;
+}
+
+.add-to-cart {
+    position: absolute;
+    right: 0;
+    top: 2.75em;
+    width: 113px;
+    height: 22px;
+}
+
+.product-social-media {
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin-right: 8px;
+        float: left;
+      }
+    }
+}
+
+.product-specs {
+    padding-bottom: 2em; 
+
+    p {
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+    }
+    
+    ul {
+      margin: 0;
+      padding:0;
+      list-style: none;
+
+      li {
+        font-size: 12px;
+        line-height: 1.8;
+        font-weight: 400;
+      }
+    }
+}
+
+.shipping-statement {
+  padding-top: .25em;
+  clear: both;
+}

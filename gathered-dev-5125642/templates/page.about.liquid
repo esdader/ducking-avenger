@@ -1,0 +1,23 @@
+	<section class="int-hero">
+		<div class="inner">
+			<div class="hero-image">
+				<h1>About</h1>
+			</div>
+		</div>
+	</section>
+	<div class="inner-bottom-divider clearfix">
+		<div class="int-side-nav about-nav float-column int-side">
+			<h1>About</h1>
+			{% for link in linklists.about-menu.links %}
+				<a href="{{ link.url }}"{% if link.active %} class="current"{% endif %}>{{ link.title }}</a>
+			{% endfor %}
+		</div>
+		<section class="about-main float-column int-main">
+			{{ page.content }}
+		</section>
+		{% if page.handle == 'about' %}
+			<img src="{{ 'gathered_side_logo.png' | asset_url }}" alt="Gathered small logo" class="side-logo" />
+		{% elsif page.handle == 'elizabeth-kairys-allspaw' %}
+			<img src="{{ 'eka_picture.jpg' | asset_url }}" alt="Elizabeth Kairys Allspaw bio photo" class="side-image" />
+		{% endif %}
+	</div>

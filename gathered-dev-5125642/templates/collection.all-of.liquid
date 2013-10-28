@@ -1,0 +1,25 @@
+{% paginate collection.products by 50 %}
+<div class="inner shop-intro">  
+  <h1>{{ collection.title | escape }}</h1>
+</div>
+<div class="inner">
+  <nav class="shop-subnav column">
+    <h1>View all:</h1>
+    <div class="subnav-children current">
+      <a href="http://gathered-dev.myshopify.com/collections/all-paintings">Paintings</a>
+    </div>
+  </nav>
+  <section class="shop-art-type shop-main-content column">
+    <article class="shop-type-listing search-page">
+      {% for product in collection.products %}
+        <div class="search-holder element {{ product.type | handleize}}">
+          <a href="/collections/{{ product.vendor || handleize }}/products/{{ product.handle }}"><img src="{{ product.featured_image | product_img_url: 'compact' }}" alt="{{ product.featured_image.alt | escape }}" /></a>
+        </div>
+      {% endfor %}
+    </article>
+  </section>
+  <div class="pagi">
+    {{ paginate | default_pagination }}
+  </div>
+</div>
+{% endpaginate %}

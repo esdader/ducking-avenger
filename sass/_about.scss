@@ -1,0 +1,75 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+//                      About Section                //
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+//------------------------------------------- hero and title
+
+
+
+.about-nav {
+    a {
+        padding-left: 6px;
+    }
+}
+
+.int-main p {
+    margin-bottom: 2em;
+    line-height: 1.75;
+}
+
+/* side logo */
+.side-logo, .side-image {
+    position: absolute;
+    right: 0;
+    top: 1em;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+//                      About Section > Charity      //
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+/* uses some of the main about section */
+
+.charity-entry {
+    $spacing: 28 / 16 * 1em;
+    padding: 0 0 $spacing 0;
+    @include divider-top;
+}
+
+.charity-entry h1 {
+    margin: 1.25em 0 .875em 0;
+    color: $dark-black;
+    font-size: 16px;
+    line-height: 1;
+}
+.charity-entry p:first-child {
+    margin-top: 0;
+}
+.charity-entry:first-child {
+    border: none;
+
+    p {
+        margin-top: 1em;
+    }
+}
+.desc {
+    width: 63%;
+    vertical-align: top;
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+.org-logo {
+    width: 36%;
+    vertical-align: middle;
+
+    img {
+        float: right;
+        margin-top: 1em;
+    }
+}
+
+.top-align {
+    vertical-align: top;
+}

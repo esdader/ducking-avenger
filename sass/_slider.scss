@@ -1,0 +1,111 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+//                      Slider                       //
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+.carousel-container {
+  position: relative;
+}
+.carousel {
+  position: relative;
+  height: 300px;
+  width: $inner-width;
+  overflow: hidden;
+  margin-bottom: 20px; 
+  line-height: 1;
+
+}
+
+.carousel-small {
+  width: 715px;
+  height: 160px;
+}
+.carousel-inner {
+  position: absolute;
+  width: 10000px;
+  left: 0;
+  top: 0;
+
+  -webkit-transition: 0.4s ease-in-out left;
+     -moz-transition: 0.4s ease-in-out left;
+       -o-transition: 0.4s ease-in-out left;
+          transition: 0.4s ease-in-out left;
+
+  img {
+    max-height: 300px;
+    width: auto;
+    padding-left: 16px;
+  }
+  a:first-child img {
+    padding-left: 0;
+  }
+}
+
+.carousel-small .carousel-inner img {
+  max-height: 160px;
+}
+
+
+//------------------------------------------- slider buttons //
+
+.slider-btns {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    width: 40px;
+    height: 100%;
+    display: block;
+        &.prev {
+            background-color: rgb(0,0,0);
+            background: rgba(0,0,0,.2) url(arrows.png) no-repeat 14px center;
+            left: 0;
+                &:hover {
+                  background-color: rgb(255,213,2);
+                  background-color: rgba(255,213,2,.6);
+                }
+        }
+        &.next {
+            background-color: rgb(0,0,0);
+            background: rgba(0,0,0,.2) url(arrows.png) no-repeat -93px center;
+            right: 0;
+                &:hover {
+                  background-color: rgb(255,213,2);
+                  background-color: rgba(255,213,2,.6);
+                }
+        }
+}
+.hide-prev-btn .slider-btns.prev {
+  display: none;
+}
+
+.hide-next-btn .slider-btns.next {
+  display: none;
+}
+
+//------------------------------------------- slider states //
+
+.is-expaned.carousel-container {
+  width: 980px;
+  height: auto;
+}
+
+.is-expanded {
+  .carousel {
+    width: 980px;
+    height: auto;
+  }
+  .carousel-inner {
+    width: 980px;
+    height: auto;
+    left: 0;
+    position: relative;
+
+    img {
+      max-height: 300px;
+      padding-bottom: 16px;
+    }
+
+  }
+  .slider-btns.prev, .slider-btns.next {
+    display: none;
+  }
+
+}

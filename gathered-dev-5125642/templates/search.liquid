@@ -1,0 +1,19 @@
+{% paginate search.results by 50 %}  
+<div class="inner shop-intro">  
+  <h1>Searching for "{{ search.terms | escape }}" </h1>
+</div>
+<div class="inner">
+  <section class="shop-art-type search-column">
+    <article class="shop-type-listing search-page">
+      {% for item in search.results %}
+        <div class="search-holder element {{ item.type | handleize}}">
+          <a href="/collections/{{ item.vendor || handleize }}/products/{{ item.handle }}"><img src="{{ item.featured_image | product_img_url: 'compact' }}" alt="{{ item.featured_image.alt | escape }}" /></a>
+        </div>
+      {% endfor %}
+    </article>
+  </section>
+  <div class="pagi">
+    {{ paginate | default_pagination }}
+  </div>
+</div>
+{% endpaginate %}

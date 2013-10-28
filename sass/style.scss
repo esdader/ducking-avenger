@@ -1,0 +1,283 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+@import "_normalize";
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+@import "_bits";
+
+body {
+    font-family: $base-family;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $headings-family;
+    font-weight: $headings-weight;
+    font-size:   $headings-size;
+    line-height: $headings-height;
+}
+
+p {
+    font-size:   $base-size;
+    line-height: $base-height;
+    font-weight: $base-weight;
+}
+
+a {
+    color: $link-color;
+    font-weight: $base-bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $link-hover;
+}
+
+.top-bar {
+    width: 100%;
+    min-width: $site-width;
+    height: 11px;
+    background: #000;
+}
+.tb-container {
+    width: $site_width;
+    height: 11px;
+    margin: 0 auto;
+    background: url(top_bar.png) no-repeat left top;
+}
+
+.container {
+    width: $site_width;
+    min-height: 800px;
+    margin: 0 auto;
+    
+}
+
+.inner {
+    position: relative;
+    width: $inner-width;
+    margin: 0 auto;
+}
+
+.inner-bottom-divider {
+    position: relative;
+    width: $inner-width;
+    margin: 0 auto;
+    @include divider-bottom;
+}
+
+/* Columns */
+.column {
+    @include box-sizing;
+    display: inline-block;
+    vertical-align: top;
+}
+.float-column {
+    float: left;
+}
+
+.int-13b {
+    width: 26%;
+}
+.int-23b {
+    width: 73%
+}
+.int-13s {
+    width: 25%;
+}
+.int-23s {
+    width: 74%;
+}
+.home-13 {
+    width: 236px;
+    float: left;
+}
+.home-23 {
+    width: $inner-width - 240;
+    float: right;
+}
+.sub50 {
+    width: 485px;
+}
+.big50 {
+    width: $inner-width - 490px;
+}
+.int-side {
+    width: 25%;
+}
+.int-main {
+    width: 47%;
+}
+.int-main-list {
+    width: 74%;
+}
+.int-blog-side {
+    width: 29%;
+}
+.int-blog-main {
+    width: 51%;
+}
+.contact-big {
+    width: 63%;
+}
+.contact-small {
+    width: 36%;
+}
+
+//-------------------------------------//
+//           Site sections             //
+//-------------------------------------//
+
+@import "header";
+
+@import "footer";
+
+@import "slider";
+
+@import "home";
+
+@import "about";
+
+@import "int-common";
+
+@import "blog";
+
+@import "contact";
+
+
+// Shop Section 
+// -------------------------------------------------- //
+
+@import "shop/artist";
+
+@import "shop/product-detail";
+
+@import "cart";
+
+@import "shop/shop-by";
+
+// Misc Sections 
+// -------------------------------------------------- //
+
+@import "shop/full-width-page";
+
+@import "isotope";
+
+
+@import "helper-classes";
+
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+@import "print";

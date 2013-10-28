@@ -1,0 +1,38 @@
+{% paginate collection.products by 50 %}
+<div class="inner">
+	<section class="artists-hero">
+		<header>
+			<p><a href="/">Home</a> / <a href="/pages/artists">Shop</a> / <a href="/pages/artists">By Artist</a></p>
+			<h1 class="artists-title">{{ collection.title }}</h1>
+
+		</header>
+		<div class="carousel-container  hide-prev-btn">
+    		<div class="carousel">
+      			<div class="carousel-inner">
+	        		{% for product in collection.products %}
+	        			{% if forloop.first %}
+	        				{% assign vendor_name = product.vendor | handleize %}
+	        			{% endif %}
+	        			<a href="{{ product.url | within: collection }}"><img src="{{ product.featured_image | product_img_url: 'large' }}" /></a>
+	        		{% endfor %}
+         		</div>
+    		</div>
+    		<a href="#previous" class="slider-btns prev left ir">Previous</a>
+    		<a href="#next" class="slider-btns next right ir">Next</a>
+  		</div>
+    </section>
+	{% comment %} 
+	    Start template that is entered  as the collection description
+	{% endcomment %}
+	    {{ collection.description }}
+	{% comment %} End template {% endcomment %}
+	    	
+    <section class="similar-art column int-23s">
+    	<h1>Similar Art</h1>
+    	{% capture collectionName %}similar-{{ vendor_name }}{% endcapture %}
+    	{% for product in collections[collectionName].products %}
+    		<a href="/collections/{{ product.vendor || handleize }}/products/{{ product.handle }}"><img src="{{ product.featured_image | product_img_url: 'medium' }}" alt="{{ product.featured_image.alt | escape }}" /></a>
+    	{% endfor %}
+    </section>
+</div>
+{% endpaginate %}

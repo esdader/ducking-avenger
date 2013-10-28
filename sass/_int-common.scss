@@ -1,0 +1,55 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+//              Interior Common Elements             //
+// - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+//------------------------------------------- hero and title
+
+.int-hero {
+    
+}
+
+.int-hero.about {
+
+}
+
+.hero-image {
+    width: 980px;
+    height: 301px;
+    display: block;
+    background: url(about_hero.jpg) no-repeat left top;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    @include divider-bottom;
+    h1 {
+        margin-top: 0;
+        color: #fff;
+        font-size: 107px;
+        line-height: 301px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+}
+
+.int-side-nav {
+    h1 {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        font: normal normal $base-bold 12px/2.3 $sans-family;
+        text-transform: uppercase;
+    }
+
+    a {
+        display: block;
+        font-size: 12px;
+        line-height: 1.75;
+        font-weight: $base-book;
+        color: $dark-black;
+            &.current {
+                font-weight: $base-bold;
+            }
+            &:hover {
+                color: $yellow;
+            }
+    }
+}

@@ -1,0 +1,33 @@
+<section class="int-hero">
+    <div class="inner">
+      <div class="hero-image blog-hero">
+        <h1>Blog</h1>
+      </div>
+    </div>
+  </section>
+  <div class="inner-bottom-divider clearfix">
+    <div class="int-side-nav column int-blog-side">
+      {% assign articleTitle = article.title %}
+      {% for link in linklists.blog-menu.links %}
+        {% assign current_category = link.title | handleize %}
+        <h1><a href="/blogs/latest/tagged/{{ current_category }}">{{ link.title }}</a></h1>
+        {% for article in blogs.latest.articles %}
+          {% for tag in article.tags %}
+            {% assign current_tag = tag | handleize %}
+            {% if current_tag == current_category %}
+              <a href="{{ article.url }}"{% if articleTitle == article.title %}  class="active"{% endif %}>{{ article.title }}</a>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+    <section class="blog-main column int-blog-main single-article-view">
+      <article class="blog-entry">
+        <header>
+          <h1>{{ article.title }}</h1>
+          <p><time pubdate="{{ article.created_at | date: "%Y-%m-%d" }}">{{ article.created_at | date: "<span>%Y /</span> %B %d"}}</time></p>
+        </header>
+        {{ article.content }}
+      </article>
+    </section>
+  </div>
