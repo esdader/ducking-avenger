@@ -1069,22 +1069,6 @@ a:hover {
   padding-left: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_footer\.scss}line{font-family:\00003180}}
-.right-pos {
-  position: absolute;
-  right: 50px;
-  top: 129px;
-  width: 349px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_footer\.scss}line{font-family:\00003186}}
-.right-pos h1 {
-  color: #fff;
-  font-weight: 400;
-  font-size: 14px;
-  margin-top: 0;
-  line-height: 1;
-}
-
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_slider\.scss}line{font-family:\000034}}
 .carousel-container {
   position: relative;

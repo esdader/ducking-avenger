@@ -108,19 +108,6 @@
         </ul>
         <div class="fb-like" data-href="{{ shop.url }}" data-send="true" data-layout="button_count" data-width="90" data-show-faces="false"></div>
     </section>
-    {% unless template == 'index' %}
-      <section class="newsletter-widget right-pos">
-        <h1>Stay up to date on the latest Gathered news &raquo;</h1>
-        <!-- Begin MailChimp Signup Form -->
-        <div id="mc_embed_signup" class="mc-embed-signup">
-          <form action="http://gathered.us5.list-manage.com/subscribe/post?u=3cda6bcc55226f16c183b97f4&amp;id=abcad33fca" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            
-              <input type="email" value="" name="EMAIL" class="email mce-email" id="mce-EMAIL"  value="Email Address" required  onfocus="if( this.value == 'enter your email address' ) {this.value = '';};" placeholder="enter your email address">
-              <input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="mc-ebedded-subscribe main-btn">
-          </form>
-        </div>
-      </section>
-    {% endunless %}
     <nav class="tc-links">
       <ul>
         {% for link in linklists.footer.links %}
