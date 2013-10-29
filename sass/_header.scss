@@ -72,6 +72,28 @@
     background-color: #000;
 }
 
+// newsletter link
+.newsletter-signup-link {
+    position: absolute;
+    width: 350px;
+    height: 20px;
+    top: 53px;
+    left: 637px;
+
+    a {
+        color: $yellow;
+        font-weight: 600;
+        font-size: 12px;
+        margin: 0;
+        line-height: 1;
+        text-transform: none;
+    }
+
+    a:hover {
+        color: $blue;
+    }
+}
+
 .cart-count {
     position: absolute;
     left: 911px;

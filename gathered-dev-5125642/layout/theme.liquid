@@ -69,6 +69,11 @@
         <input type="submit" class="search-button main-btn" name="search-button" value="" onclick="if( this.value == 'Search' ) {this.value = '';};" id="seek" />
       </form>
     </div>
+    {% unless template == 'index' %}
+      <div class="newsletter-signup-link">
+        <a href="/pages/newsletter-sign-up">Stay up to date on the latest Gathered news &raquo;</a>
+      </div>
+    {% endunless %}
     <div class="cart-count">
       <a href="/cart">Cart: {{ cart.item_count}}</a>
     </div>

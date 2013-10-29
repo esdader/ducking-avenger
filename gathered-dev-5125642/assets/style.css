@@ -870,7 +870,29 @@ a:hover {
   background-color: #000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_header\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_header\.scss}line{font-family:\0000376}}
+.newsletter-signup-link {
+  position: absolute;
+  width: 350px;
+  height: 20px;
+  top: 53px;
+  left: 637px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_header\.scss}line{font-family:\0000383}}
+.newsletter-signup-link a {
+  color: #ffd502;
+  font-weight: 600;
+  font-size: 12px;
+  margin: 0;
+  line-height: 1;
+  text-transform: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_header\.scss}line{font-family:\0000392}}
+.newsletter-signup-link a:hover {
+  color: #2788c5;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_header\.scss}line{font-family:\0000397}}
 .cart-count {
   position: absolute;
   left: 911px;
@@ -879,7 +901,7 @@ a:hover {
   height: 20px;
   background: url(cart_icon.png) no-repeat left 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_header\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_header\.scss}line{font-family:\00003105}}
 .cart-count a {
   margin: 0 0 0 22px;
   font-size: 12px;
@@ -887,7 +909,7 @@ a:hover {
   color: #167fc3;
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_header\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_header\.scss}line{font-family:\00003112}}
 .cart-count a:hover {
   color: #ffd502;
 }
@@ -4845,6 +4867,33 @@ h1, h2, h3, h4, h5, h6 {
 .faq i,
 .faq em {
   font-size: 13px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_fullpage-signup\.scss}line{font-family:\000034}}
+.fullpage-signup {
+  margin-top: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_fullpage-signup\.scss}line{font-family:\000037}}
+.fullpage-signup label {
+  display: inline-block;
+  width: 83px;
+  margin-right: 17px;
+  text-align: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_fullpage-signup\.scss}line{font-family:\0000315}}
+.fullpage-signup .fps-fname,
+.fullpage-signup .fps-lname {
+  width: 175px;
+  margin: 0 6px 14px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_fullpage-signup\.scss}line{font-family:\0000320}}
+.fullpage-signup .fps-email {
+  width: 365px;
+  margin-bottom: 28px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_fullpage-signup\.scss}line{font-family:\0000325}}
+.fullpage-signup p {
+  margin: 0;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tristanader\/Sites\/gathered\/shopify\/sass\/_isotope\.scss}line{font-family:\000031}}
