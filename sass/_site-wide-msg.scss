@@ -1,0 +1,16 @@
+// site wide msg
+.site-wide-msg {
+    width: 980px;
+    margin: -2em auto 2em;
+    padding: .25em 1em;
+    background: #e5eef3;
+
+    border-radius: 3px;
+
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+
+    p {
+        font-size: 14px;
+        margin: 0;
+    }
+}
