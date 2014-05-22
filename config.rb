@@ -2,10 +2,10 @@
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "gathered-dev-5125642/assets"
+css_dir = "gathered-dev-8179009/assets"
 sass_dir = "sass"
-images_dir = "gathered-dev-5125642/assets"
-javascripts_dir = "gathered-dev-5125642/assets"
+images_dir = "gathered-dev-8179009/assets"
+javascripts_dir = "gathered-dev-8179009/assets"
 
 # You can select your preferred output style here (can be overridden via the command line):
 output_style = :expanded
