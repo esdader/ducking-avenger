@@ -174,5 +174,48 @@ if (typeof Object.create !== 'function') {
         $this.next('.subnav-children').slideToggle();
     });
 
+    // event tracking
+
+    var $purchaseBtn = $('#purchase'),
+        $cartBtn     = $('input[name="checkout"]'),
+        $paypalBtn   = $('input[name="goto_pp"]');
+
+
+    $cartBtn.on('click', function (e) {
+        if (typeof ga !== 'undefined') {
+            ga('send', 'event', 'Purchase Patterns', 'Checkout process started', 'using shopify checkout');
+        }
+
+        if (typeof _gaq !== 'undefined') {
+            _gaq.push(['_trackEvent', 'Purchase Patterns', 'Checkout process started', 'using shopify checkout']);
+        }
+    });
+
+    $paypalBtn.on('click', function (e) {
+        if (typeof ga !== 'undefined') {
+            ga('send', 'event', 'Purchase Patterns', 'Checkout process started', 'using paypal checkout');
+        }
+
+        if (typeof _gaq !== 'undefined') {
+            _gaq.push(['_trackEvent', 'Purchase Patterns', 'Checkout process started', 'using paypal checkout']);
+        }
+    });
+
+    $purchaseBtn.on('click', function (e) {
+        var $price = $('.price').text(),
+            $artist = $('.artists-title').find('a').text(),
+            $piece  = $('.product-details').find('h1').text(),
+            $msg = $artist + ' - ' + $piece  + ' - ' + $price;
+
+        if (typeof ga !== 'undefined') {
+            ga('send', 'event', 'Purchase Patterns', 'Add to Cart', $msg);
+        }
+
+        if (typeof _gaq !== 'undefined') {
+            _gaq.push(['_trackEvent', 'Purchase Patterns', 'Add to Cart', $msg]);
+        }
+    });
+    
+
 })(jQuery);
 
