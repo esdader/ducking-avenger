@@ -1,17 +1,49 @@
+.notification-area {
+    width: 980px;
+    margin: -2em auto 0;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
 // site wide msg
 .site-wide-msg {
-    width: 980px;
-    margin: -2em auto 2em;
     padding: .25em 1em;
+    margin-bottom: 2em;
     background: #e5eef3;
-
     border-radius: 3px;
 
-    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+       
 
     p {
         font-size: 14px;
         margin: 0;
         color: #167fc3;
+    }
+}
+
+// page specific message
+.cart-returns-msg {
+    padding: .25em 1em;
+    margin-bottom: 2em;
+    background: #e5eef3;
+    border-radius: 3px;
+
+       
+
+    p {
+        font-size: 14px;
+        margin: 0;
+    }
+}
+
+// homepage message
+.page-specific-msg {
+    margin-bottom: 2em;
+
+    p {
+        font-size: 14px;
+        margin: 0;
     }
 }
