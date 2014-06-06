@@ -358,6 +358,11 @@ td.remove {
   background-clip: padding-box;
   outline: none;
 }
+
+#newsletter-signup-modal {
+  width: 474px;
+}
+
 .modal.fade {
   -webkit-transition: opacity .3s linear, top .3s ease-out;
   -moz-transition: opacity .3s linear, top .3s ease-out;

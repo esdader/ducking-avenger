@@ -176,12 +176,26 @@ if (typeof Object.create !== 'function') {
 
     // event tracking
 
-    var $purchaseBtn = $('#purchase'),
-        $cartBtn     = $('input[name="checkout"]'),
-        $paypalBtn   = $('input[name="goto_pp"]');
+    var $purchaseBtn           = $('#purchase'),
+        $cartBtn               = $('input[name="checkout"]'),
+        $paypalBtn             = $('input[name="goto_pp"]'),
+        $newsletterSignupBtn   = $('.newsletter-btn'),
+        $newsletterSignupModal = $('#newsletter-signup-modal'),
+        $donateBtn             = $('#donate-modal-btn'),
+        $donateModal           = $('#donate-modal');
+
+    $newsletterSignupBtn.on('click', function (e) {
+        e.preventDefault();
+        $newsletterSignupModal.modal('show');
+    });
 
 
-    $cartBtn.on('click', function (e) {
+    $donateBtn.on('click', function(e) {
+        $donateModal.modal('show');
+        e.preventDefault();
+    });
+
+    $cartBtn.on('click', function () {
         if (typeof ga !== 'undefined') {
             ga('send', 'event', 'Purchase Patterns', 'Checkout process started', 'using shopify checkout');
         }
@@ -191,7 +205,7 @@ if (typeof Object.create !== 'function') {
         }
     });
 
-    $paypalBtn.on('click', function (e) {
+    $paypalBtn.on('click', function () {
         if (typeof ga !== 'undefined') {
             ga('send', 'event', 'Purchase Patterns', 'Checkout process started', 'using paypal checkout');
         }
@@ -201,7 +215,7 @@ if (typeof Object.create !== 'function') {
         }
     });
 
-    $purchaseBtn.on('click', function (e) {
+    $purchaseBtn.on('click', function () {
         var $price = $('.price').text(),
             $artist = $('.artists-title').find('a').text(),
             $piece  = $('.product-details').find('h1').text(),
