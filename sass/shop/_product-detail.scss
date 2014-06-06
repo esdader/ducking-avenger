@@ -163,7 +163,21 @@
     }
 }
 
-.shipping-statement {
+.shipping-returns-statement {
+  border-top: 1px solid #ccc;
   padding-top: .25em;
+  margin-top: 1em;
   clear: both;
+
+  h3 {
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 1.6;
+    font-family: "ff-basic-gothic-web-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-top: 0;
+  }
 }
