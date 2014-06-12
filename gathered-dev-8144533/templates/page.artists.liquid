@@ -3,21 +3,27 @@
 </div>
 <div class="inner">
 	<nav class="shop-subnav column">
-		<h1>Artist</h1>
+		<h1>Shop By Artist</h1>
 			<div class="subnav-children current">
 				{% for link in linklists.artists-menu.links %}
 					<a href="{{ link.url }}">{{ link.title }}</a>
 				{% endfor %}
 			</div>
-		<h1>Type of Art</h1>
-			<div class="subnav-children">
+		<h1>Shop By Type of Art</h1>
+			<div class="subnav-children current">
 				{% for link in linklists.type-of-art-menu.links %}
 					<a href="{{ link.url }}">{{ link.title }}</a>
 				{% endfor %}
 			</div>
+		<h1>Shop By Price</h1>
+			<div class="subnav-children current">
+				{% for link in linklists.by-price.links %}
+					<a href="{{ link.url }}">{{ link.title }}</a>
+				{% endfor %}
+			</div>
 		{% if linklists.collections-menu.links.size > 0 %}
-			<h1>Collections</h1>
-				<div class="subnav-children">
+			<h1>Shop By Collections</h1>
+				<div class="subnav-children current">
 					{% for link in linklists.collections-menu.links %}
 						<a href="{{ link.url }}">{{ link.title }}</a>
 					{% endfor %}
