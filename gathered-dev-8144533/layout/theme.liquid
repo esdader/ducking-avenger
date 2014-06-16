@@ -74,15 +74,21 @@
       <a href="/cart">Cart: {{ cart.item_count}}</a>
     </div>
   </header>
-  {% if settings.show_site_wide_msg 
-        or settings.show_cart_page_returns_msg and template == 'cart' 
-        or settings.show_homepage_msg and template == 'index'
-        or settings.show_shop_msg and template == 'page.artists'
-  %}
+  {% assign show_noticification_area = false %}
+  {% if settings.show_site_wide_msg %}
+    {% assign show_noticification_area = true %}
+  {% elsif settings.show_cart_page_returns_msg and template == 'cart' %}
+    {% assign show_noticification_area = true %}
+  {% elsif settings.show_homepage_msg and template == 'index' %}
+    {% assign show_noticification_area = true %}
+  {% elsif settings.show_shop_msg and template == 'page.artists' %} 
+    {% assign show_noticification_area = true %}
+  {% endif %}
+  {% if show_noticification_area %}
     <div class="notification-area">
       {% if settings.show_site_wide_msg %}
         <div class="site-wide-msg">
-          <p>{{ settings.site_wide_msg }}</p>
+          <p>{{ settings.site_wide_msg }}</p> 
         </div>
       {% endif %}
       {% if settings.show_cart_page_returns_msg and template == 'cart' %}
