@@ -172,11 +172,10 @@ td.remove {
     border: none;
     color: #fff;
     text-transform: uppercase;
-    background: #000 url(subbtn_bg.png) no-repeat right center;
+    background: #000 url(button_off.png) no-repeat right center;
 
     &:hover {
-        background-image: url(subbtn_bg_rolls.png);
-        background-color: #57585a;
+        background-image: url(button_over.png);
     }
 
 }
