@@ -35,7 +35,9 @@
 		<article class="shop-type-listing">
 			<h1>{{ collection.title }}</h1>
 			{% for product in collection.products %}
-				<a href="/collections/{{ product.vendor || handleize }}/products/{{ product.handle }}"><img src="{{ product.featured_image | product_img_url: 'medium' }}" alt="{{ product.featured_image.alt | escape }}" /></a>
+				{% unless product.type == 'Donation' %}
+					<a href="/collections/{{ product.vendor || handleize }}/products/{{ product.handle }}"><img src="{{ product.featured_image | product_img_url: 'medium' }}" alt="{{ product.featured_image.alt | escape }}" /></a>
+				{% endunless %}
 			{% endfor %}
 		</article>
 	</section>

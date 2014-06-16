@@ -26,3 +26,15 @@
 		margin: 0;
 	}
 }
+
+
+.form-messages {
+	display: none;
+	width: 80%;
+	padding-bottom: 2em;
+	font-size: 14px;
+}
+
+.form-messages.is-error {
+	color: #167fc3;
+}

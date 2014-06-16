@@ -182,15 +182,75 @@ if (typeof Object.create !== 'function') {
         $newsletterSignupBtn   = $('.newsletter-btn'),
         $newsletterSignupModal = $('#newsletter-signup-modal'),
         $donateBtn             = $('#donate-modal-btn'),
-        $donateModal           = $('#donate-modal');
+        $donateModal           = $('#donate-modal'),
+        $emailForm             = $('#mc_embed_signup.modal-signup'),
+        $formMsgs              = $('.form-messages'),
+        options;
 
     $newsletterSignupBtn.on('click', function (e) {
         e.preventDefault();
         $newsletterSignupModal.modal('show');
     });
 
+    function clearError() {
+        $formMsgs
+            .fadeOut(200)
+            .removeClass('is-error')
+            .text('');
+    }
 
-    $donateBtn.on('click', function(e) {
+    function mce_success_cb(resp) {
+        if (resp.result=="success"){
+            $formMsgs
+                .text('Thank You! You will recieve a confirmation email soon.')
+                .fadeIn(200);
+        } else {
+            $formMsgs
+                .addClass('is-error')
+                .text('There was a problem with your form. Please make sure everything is correct and resubmit your form.')
+                .fadeIn(200);
+            setTimeout(clearError, 8000);
+        }
+    }
+
+    // var err_style = '';
+    // var options = { errorClass: 'mce_inline_error', errorElement: 'div', errorStyle: err_style, onkeyup: function(){}, onfocusout:function(){}, onblur:function(){}  };
+    // var mce_validator = $emailForm.validate(options);
+
+    options = { url:'http://gathered.us5.list-manage.com/subscribe/post-json?u=3cda6bcc55226f16c183b97f4&amp;id=abcad33fca&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
+            // beforeSubmit: function(){
+            //     console.log('fired');
+            //     // $('#mce_tmp_error_msg').remove();
+            //     $('.datefield','#mc_embed_signup').each(
+            //         function(){
+            //             var txt = 'filled';
+            //             var fields = [];
+            //             var i = 0;
+            //             $(':text', this).each(
+            //                 function(){
+            //                     fields[i] = this;
+            //                     i++;
+            //                 });
+            //             $(':hidden', this).each(
+            //                 function(){
+            //                     if ( fields[0].value ==='MM' && fields[1].value ==='DD' && fields[2].value ==='YYYY' ){
+            //                         this.value = '';
+            //                     } else if ( fields[0].value ==='' && fields[1].value ==='' && fields[2].value ==='' ){
+            //                         this.value = '';
+            //                     } else {
+            //                         this.value = fields[0].value+'/'+fields[1].value+'/'+fields[2].value;
+            //                     }
+            //                 });
+            //         });
+            //     return mce_validator.form();
+            // },
+            success: mce_success_cb
+        };
+
+    $emailForm.ajaxForm(options);
+
+
+    $donateBtn.on('click', function (e) {
         $donateModal.modal('show');
         e.preventDefault();
     });
